@@ -1,0 +1,5 @@
+ticket_id,summary,category,priority,impact,urgency,service,status
+DEMO-HD-001,Unable to print from one workstation,Printer,P3,Low,Medium,Printing,Open
+DEMO-HD-002,Office internet unavailable,Internet,P1,High,High,Internet,Open
+DEMO-HD-003,Password reset request,Identity & Access,P4,Low,Low,Identity,Open
+DEMO-HD-004,Suspicious sign-in alert,Security Incident,P2,Medium,High,Email,Escalated

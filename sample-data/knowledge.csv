@@ -1,0 +1,4 @@
+article_id,title,category,risk_level,last_reviewed
+KB-001,Printer basic connectivity checks,Printer,Low,2026-08-01
+KB-002,Internet outage initial triage,Internet,Medium,2026-08-01
+KB-003,Password reset verification process,Identity & Access,Low,2026-08-01

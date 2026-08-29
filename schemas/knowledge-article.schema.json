@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KnowledgeArticle",
+  "type": "object",
+  "required": ["article_id", "title", "content"],
+  "properties": {
+    "article_id": {"type": "string"},
+    "title": {"type": "string"},
+    "category": {"type": ["string", "null"]},
+    "content": {"type": "string"},
+    "risk_level": {"type": ["string", "null"]},
+    "last_reviewed": {"type": ["string", "null"], "format": "date"}
+  },
+  "additionalProperties": true
+}
