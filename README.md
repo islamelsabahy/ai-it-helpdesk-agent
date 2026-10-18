@@ -6,6 +6,24 @@ The agent supports ticket intake, triage, priority classification, troubleshooti
 
 All examples and sample data are fictional.
 
+
+## Try the triage / جرّب الفرز
+
+**Live:** https://islamelsabahy.github.io/ai-it-helpdesk-agent/
+
+The agent design in this repo now runs as a working triage tool:
+
+- **Reads tickets as staff actually write them**, in Arabic or English ("النت فاصل في الشركة كلها", "أودو بيطلع error في الفاتورة"). Categories follow [`02-ticket-triage/category-model.md`](02-ticket-triage/category-model.md), with a confidence score; when confidence is low it uses *Needs Review* and asks one focused question instead of guessing.
+- **Impact × urgency → priority** using the matrix in [`03-priority-sla/priority-model.md`](03-priority-sla/priority-model.md). Security incidents and data-loss risk are bumped.
+- **SLA due times** from [`sla-model.md`](03-priority-sla/sla-model.md) on the **Egyptian working week (Sunday–Thursday, 9–5)**. P1 runs on clock time.
+- **Escalation matrix** ([`06-escalation`](06-escalation)): incident owner, security, vendor/ISP, stop-and-escalate on data-loss risk, change approval for unsafe requests.
+- **Knowledge article and a safe first response:** first steps in the user's language, with no invented diagnosis, no secrets, no bypassing of security controls, and no closing without validation ([`09-safety-privacy`](09-safety-privacy)).
+- **Queue view:** paste or upload a ticket CSV to see first-response and resolution breaches, tickets at risk and security tickets, sorted for the team lead.
+- **Executable evaluation:** the seven cases in [`tests/evaluation-cases.md`](tests/evaluation-cases.md) run in the page and in CI (`node tests/test_triage.js`).
+- **Optional AI layer:** paste your own Anthropic API key to draft a friendlier reply and a technician handoff note from the deterministic triage (the key is never stored).
+
+Engine: `docs/app/triage.js`.
+
 ## Core Capabilities
 
 - Ticket intake normalization
